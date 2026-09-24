@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="{{ page.lang | default: site.lang }}">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ page.title | escape }} · {{ site.title | escape }}</title>
+    <link rel="stylesheet" href="{{ '/assets/style.css' | relative_url }}">
+  </head>
+  <body>
+    {% assign current_language = page.lang | default: site.lang %}
+    {% assign default_language = site.languages | first %}
+    {% assign language_root = '/' %}
+    {% assign canonical_path = page.path %}
+    {% if current_language != default_language %}
+      {% assign language_prefix = current_language | append: '/' %}
+      {% assign canonical_path = page.path | remove_first: language_prefix %}
+      {% assign language_root = '/' | append: language_prefix %}
+    {% endif %}
+    <a class="skip-link" href="#main">{% if current_language == 'es' %}Saltar al contenido{% else %}Skip to content{% endif %}</a>
+    <header>
+      <a href="{{ language_root | relative_url }}">{{ site.title | escape }}</a>
+      <nav aria-label="{% if current_language == 'es' %}Idioma{% else %}Language{% endif %}">
+        <ul>
+          {% for language in site.languages %}
+            {% assign counterpart_path = canonical_path %}
+            {% if language != default_language %}
+              {% assign counterpart_path = language | append: '/' | append: canonical_path %}
+            {% endif %}
+            {% assign counterpart = site.pages | where: 'path', counterpart_path | first %}
+            {% if counterpart %}
+              <li><a href="{{ counterpart.url | relative_url }}" lang="{{ language }}" hreflang="{{ language }}"{% if language == current_language %} aria-current="page"{% endif %}>{% case language %}{% when 'en' %}English{% when 'es' %}Español{% else %}{{ language | escape }}{% endcase %}</a></li>
+            {% endif %}
+          {% endfor %}
+        </ul>
+      </nav>
+    </header>
+    <main id="main" tabindex="-1">
+      <h1>{{ page.title | escape }}</h1>
+      {{ content }}
+    </main>
+    <footer>
+      {% if page.last_updated %}
+        <p>{% if current_language == 'es' %}Última actualización{% else %}Last updated{% endif %}: <time datetime="{{ page.last_updated | date: '%Y-%m-%d' }}">{{ page.last_updated | date: '%Y-%m-%d' }}</time></p>
+      {% endif %}
+      {% if page.version %}
+        <p>{% if current_language == 'es' %}Versión{% else %}Version{% endif %}: {{ page.version | escape }}</p>
+      {% endif %}
+      {% if page.effective_date %}
+        <p>{% if current_language == 'es' %}Fecha de entrada en vigor{% else %}Effective date{% endif %}: <time datetime="{{ page.effective_date | date: '%Y-%m-%d' }}">{{ page.effective_date | date: '%Y-%m-%d' }}</time></p>
+      {% endif %}
+      {% assign changelog_url = language_root | append: 'changelog/' %}
+      <p><a href="{{ changelog_url | relative_url }}">{% if current_language == 'es' %}Historial de cambios{% else %}Changelog{% endif %}</a></p>
+    </footer>
+  </body>
+</html>
