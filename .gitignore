@@ -1,0 +1,11 @@
+# Harness (agent worktrees, local wrapper state)
+.worktrees/
+.harness/
+# Jekyll build output
+_site/
+.jekyll-cache/
+.sass-cache/
+# Python
+__pycache__/
+*.pyc
+.DS_Store
