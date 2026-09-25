@@ -1,0 +1,9 @@
+title: Legal — yarka.guru
+lang: en
+permalink: pretty
+languages: [en, es]
+exclude:
+  - README.md
+  - LICENSE
+  - scripts
+  - tests
