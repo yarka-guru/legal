@@ -16,7 +16,7 @@ publicadas por el prestador indicado a continuación.
 ## Prestador
 
 - **Nombre:** Iaroslav Pyrogov (persona física, trabajador autónomo)
-- **NIF:** Z2484697N
+- **NIE (número de identidad de extranjero, que hace las veces de NIF):** Z2484697N
 - **Dirección postal:** Apartado de Correos 3088, 03502 Benidorm (Alicante), España
 - **Correo electrónico:** [legal@yarka.guru](mailto:legal@yarka.guru)
 - **Soporte de las aplicaciones:** [support@yarka.guru](mailto:support@yarka.guru)

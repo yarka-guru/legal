@@ -6,7 +6,7 @@ last_updated: 2026-10-03
 ---
 ## 2026-10-03
 
-Publicado el [aviso legal]({{ '/es/imprint/' | relative_url }}), versión 1: identidad del prestador, NIF, dirección
+Publicado el [aviso legal]({{ '/es/imprint/' | relative_url }}), versión 1: identidad del prestador, NIE, dirección
 postal y correo de contacto (LSSI-CE art. 10).
 
 ## 2026-09-24

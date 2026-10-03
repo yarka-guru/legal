@@ -15,7 +15,7 @@ electronic commerce (LSSI-CE). It applies to this website and to the apps publis
 ## Provider
 
 - **Name:** Iaroslav Pyrogov (self-employed individual, *autónomo*)
-- **Tax ID (NIF):** Z2484697N
+- **NIE (foreigner identity number, used as tax ID):** Z2484697N
 - **Postal address:** Apartado de Correos 3088, 03502 Benidorm (Alicante), Spain
 - **Email:** [legal@yarka.guru](mailto:legal@yarka.guru)
 - **App support:** [support@yarka.guru](mailto:support@yarka.guru)
